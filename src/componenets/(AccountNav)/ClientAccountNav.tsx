@@ -3,25 +3,31 @@
 import { User } from "@/cms-types"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { DropdownMenuContent, 
-    DropdownMenuItem, 
-    DropdownMenuTrigger, 
-    DropdownMenu, 
-    DropdownMenuSeparator, } from "@/components/ui/dropdown-menu"
+import {
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu"
 import { useAuth } from "@/hooks/user-auth"
 import Link from "next/link"
 
 
-const ClientAccountNav = ({user}: {user: User}) => {
-    
-    function capitalizeFirstLetter(str: string): string {
-        
-        return str.charAt(0).toUpperCase() + str.slice(1);
-      }
+const ClientAccountNav = ({ user }: { user: User }) => {
 
-    const {signOut} = useAuth()
+    function capitalizeFirstLetter(str: string): string {
+
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    const { signOut } = useAuth()
     return <DropdownMenu>
         <DropdownMenuTrigger asChild className="overflow-visible">
+            <div className="flex space-x-3">
+                <button id="btn-en" className="bg-gray-800 text-white px-4 py-2 rounded-md">Eng</button>
+                <button id="btn-fr" className="bg-gray-800 text-white px-4 py-2 rounded-md">Fr</button>
+            </div>
             <Button variant="ghost" size="sm" className="relative">Mon compte</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-60 " align="end">
@@ -30,7 +36,7 @@ const ClientAccountNav = ({user}: {user: User}) => {
                     <Badge className="flex justify-center bg-teal-800">{`${user.nom} ${user.prenom}`}</Badge>
                 </div>
             </div>
-            
+
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
                 <Link href={`/quiz`}>Quiz</Link>

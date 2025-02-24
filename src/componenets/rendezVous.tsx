@@ -62,6 +62,48 @@ const RendezVous = () => {
     };
     return <>
         <div className="py-6 sm:py-15 lg:pt-5">
+        <section className="p-12 text-center">
+        <h1 className="text-4xl font-extrabold mb-6">À Propos de Nous</h1>
+        <p className="text-lg max-w-3xl mx-auto">
+          Bienvenue chez NellyGlam, votre clinique de beauté dédiée à révéler votre éclat naturel. 
+          Découvrez notre expertise et nos soins personnalisés pour une expérience luxueuse et apaisante.
+        </p>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 p-12">
+        <div className="group relative overflow-hidden rounded-lg shadow-lg">
+          <img src="https://plus.unsplash.com/premium_photo-1661769358914-1d33c22bd7ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Soins du Visage" className="w-full h-80 object-cover transition duration-300 ease-in-out group-hover:scale-110" />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out p-4">
+            <h2 className="text-white text-2xl font-bold mb-2">Soins du Visage</h2>
+            <p className="text-white text-sm">
+              Offrez à votre peau le soin qu&apos;elle mérite avec nos traitements sur mesure, 
+              utilisant des produits haut de gamme pour hydrater, purifier et revitaliser votre teint.
+            </p>
+          </div>
+        </div>
+
+        <div className="group relative overflow-hidden rounded-lg shadow-lg">
+          <img src="https://images.unsplash.com/photo-1731355771317-b2ab72c79124?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Massages et Relaxation" className="w-full h-80 object-cover transition duration-300 ease-in-out group-hover:scale-110" />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out p-4">
+            <h2 className="text-white text-2xl font-bold mb-2">Massages et Relaxation</h2>
+            <p className="text-white text-sm">
+              Plongez dans un univers de sérénité grâce à nos massages personnalisés, 
+              conçus pour détendre le corps et l&apos;esprit et éliminer le stress du quotidien.
+            </p>
+          </div>
+        </div>
+
+        <div className="group relative overflow-hidden rounded-lg shadow-lg">
+          <img src="https://images.unsplash.com/photo-1737215398603-2ef701df8036?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Esthétique Avancée" className="w-full h-80 object-cover transition duration-300 ease-in-out group-hover:scale-110" />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out p-4">
+            <h2 className="text-white text-2xl font-bold mb-2">Esthétique Avancée</h2>
+            <p className="text-white text-sm">
+              Découvrez les dernières technologies en soins esthétiques, 
+              incluant le rajeunissement de la peau, les traitements anti-âge et plus encore pour sublimer votre beauté.
+            </p>
+          </div>
+        </div>
+      </section>
             <div className="mx-auto max-w-screen-2xl px-5 md:px-5">
                 <div className="flex flex-col overflow-hidden rounded-lg bg-stone-200 sm:flex-row">
 
@@ -73,7 +115,7 @@ const RendezVous = () => {
                                         <Image
                                             width={1000} height={1000}
                                             alt=""
-                                            src="https://images.unsplash.com/photo-1528498033373-3c6c08e93d79?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            src="https://images.unsplash.com/photo-1598300188904-6287d52746ad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                             className="absolute inset-0 h-full w-full object-cover"
                                         />
                                     </div>
