@@ -40,7 +40,7 @@ export default function RootLayout({
               className='flex-grow flex-1'
             >{children}
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </Providers>
         </main>
         <Toaster position='top-center' richColors />
