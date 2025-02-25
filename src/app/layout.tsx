@@ -33,7 +33,7 @@ export default function RootLayout({
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </head>
       <body className={cn(` relative h-full ${myFont.variable} font-serif antialiased`, inter.className)}>
-        <main className=' bg-PrimaryColor relative flex flex-col min-h-screen '>
+        <main className=' bg-black relative flex flex-col min-h-screen '>
           <Providers>
             <NavBar />
             <div
