@@ -18,7 +18,7 @@ const stripe_1 = require("../lib/stripe");
 exports.paymentRouter = (0, trpc_1.router)({
     createSession: trpc_1.privateProcedure
         .input(zod_1.z.object({ productIds: zod_1.z.array(zod_1.z.string()) }))
-        .mutation(({ ctx, input }) => __awaiter(void 0, void 0, void 0, function* () {
+        .mutation((_a) => __awaiter(void 0, [_a], void 0, function* ({ ctx, input }) {
         const { user } = ctx;
         let { productIds } = input;
         if (productIds.length === 0) {
@@ -76,7 +76,7 @@ exports.paymentRouter = (0, trpc_1.router)({
     })),
     pollOrderStatus: trpc_1.privateProcedure
         .input(zod_1.z.object({ orderId: zod_1.z.string() }))
-        .query(({ input }) => __awaiter(void 0, void 0, void 0, function* () {
+        .query((_b) => __awaiter(void 0, [_b], void 0, function* ({ input }) {
         const { orderId } = input;
         const payload = yield (0, get_payload_1.getPayloadClient)();
         const { docs: orders } = yield payload.find({

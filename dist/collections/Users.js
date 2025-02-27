@@ -12,7 +12,17 @@ const adminsAndUser = ({ req: { user } }) => {
     };
 };
 exports.Users = {
-    slug: 'users',
+    slug: "users",
+    labels: {
+        singular: {
+            en: 'User',
+            fr: 'Utilisateur'
+        },
+        plural: {
+            en: 'Users',
+            fr: 'Utilisateurs'
+        }
+    },
     auth: {
         verify: {
             generateEmailHTML: ({ token }) => {
@@ -33,6 +43,8 @@ exports.Users = {
     admin: {
         hidden: ({ user }) => user.role !== 'admin',
         defaultColumns: ['id'],
+        useAsTitle: 'Utilisateurs',
+        group: 'Patients'
     },
     fields: [
         {
@@ -57,12 +69,39 @@ exports.Users = {
         },
         {
             name: 'role',
-            defaultValue: 'user',
+            defaultValue: 'patient',
             required: true,
             type: 'select',
             options: [
-                { label: 'Admin', value: 'admin' },
-                { label: 'User', value: 'user' },
+                { value: 'admin', label: 'Admin' },
+                { value: 'patient', label: 'Patient' },
+            ],
+        },
+        {
+            name: 'nom',
+            defaultValue: 'N/A',
+            required: true,
+            type: 'text',
+        },
+        {
+            name: 'prenom',
+            defaultValue: 'N/A',
+            required: true,
+            type: 'text',
+        },
+        {
+            name: 'tel',
+            defaultValue: 'N/A',
+            required: true,
+            type: 'text',
+        },
+        {
+            name: 'genre',
+            required: true,
+            type: 'select',
+            options: [
+                { value: 'homme', label: 'Homme' },
+                { value: 'femme', label: 'Femme' },
             ],
         },
     ],

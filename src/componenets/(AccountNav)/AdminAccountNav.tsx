@@ -22,7 +22,7 @@ const AdminAccountNav = ({user}: {user: User}) => {
     const {signOut} = useAuth()
     return <DropdownMenu>
         <DropdownMenuTrigger asChild className="overflow-visible">
-            <Button variant="ghost" size="sm" className="relative">Mon compte</Button>
+            <Button variant="ghost" size="sm" className="relative border border-yellow-200 rounded-lg text-white">Mon compte</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-60 " align="end">
             <div className="flex items-center justify-center gap-5 p-2">

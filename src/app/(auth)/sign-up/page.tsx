@@ -74,25 +74,25 @@ const Page = () => {
 
     return <>
         <div className="container relative flex pt-5 flex-col items-center justify-center lg:px-0">
-            <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <div className="mx-auto flex w-full flex-col justify-center space-y-6  sm:w-[350px] ">
                 <div className="flex flex-col items-center space-y-2 text-center">
-                <h1 className="font-Amsterdam text-4xl mb-20">Rym Gamra</h1>
-                    <h1 className="text-2xl font-serif">Créer un compte</h1>
+          <Image src="/Nelly.jpg" width={100} height={100} alt="image" className="w-36 h-100  rounded-lg shadow-lg "/>
+                    <h1 className="text-4xl font-bold text-center mb-8 text-white">Créer un compte</h1>
                     <Link className={buttonVariants({
                         variant: 'link',
-                        className: 'gap-1.5 '
+                        className: 'gap-1.5 text-white '
                     })} href='/sign-in'>Avez-vous déjà un compte ? Connectez-vous. <ArrowRight className="h-4 w-4" /></Link>
                 </div>
 
-                <div className="grid gap-6">
+                <div className="grid gap-6 ">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="grid gap-2">
-                            <div className="grid gap-1 py-2">
+                            <div className="grid gap-1 py-2 ">
                                 <div className="flex ">
-                                    <Label htmlFor="email">Email</Label>
+                                    <Label htmlFor="email" className="text-white pb-3">Email</Label>
                                 </div>
                                 <Input
-                                    {...register('email')}
+                                    {...register('email')} 
                                     className={cn({
                                         "focus-visible:ring-red-500": errors.email,
                                     })}
@@ -107,7 +107,7 @@ const Page = () => {
                             <div className="flex gap-3">
                                 <div className="grid gap-1 py-2">
                                     <div className="flex ">
-                                        <Label htmlFor="nom">Nom</Label>
+                                        <Label htmlFor="nom" className="text-white pb-3">Nom</Label>
                                     </div>
                                     <Input {...register("nom")}
                                         className={cn({
@@ -117,7 +117,7 @@ const Page = () => {
                                     /></div>
                                 <div className="grid gap-1 py-2">
                                     <div className="flex ">
-                                        <Label htmlFor="prenom">Prenom</Label>
+                                        <Label htmlFor="prenom" className="text-white pb-3">Prenom</Label>
                                     </div>
                                     <Input {...register("prenom")}
                                         className={cn({
@@ -129,7 +129,7 @@ const Page = () => {
                             </div>
                             <div className="grid gap-1 py-2">
                                 <div className="flex ">
-                                    <Label htmlFor="tel">Numero de telephone</Label>
+                                    <Label htmlFor="tel" className="text-white pb-3">Numero de telephone</Label>
                                 </div>
                                 <Input {...register("tel")} className={cn({
                                     "focus-visible:ring-red-500": errors.tel
@@ -140,7 +140,7 @@ const Page = () => {
 
                                 <div className="grid gap-1 py-2">
                                     <div className="flex ">
-                                        <Label htmlFor="password">Mot de passe</Label>
+                                        <Label htmlFor="password" className="text-white pb-3">Mot de passe</Label>
                                     </div>
                                     <Input
                                         {...register("password")}

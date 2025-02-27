@@ -13,7 +13,7 @@ exports.privateProcedure = exports.publicProcedure = exports.router = void 0;
 const server_1 = require("@trpc/server");
 const t = server_1.initTRPC.context().create();
 const middleware = t.middleware;
-const isAuth = middleware(({ ctx, next }) => __awaiter(void 0, void 0, void 0, function* () {
+const isAuth = middleware((_a) => __awaiter(void 0, [_a], void 0, function* ({ ctx, next }) {
     const req = ctx.req;
     const { user } = req;
     if (!user || !user.id) {

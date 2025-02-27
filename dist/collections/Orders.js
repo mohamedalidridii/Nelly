@@ -13,8 +13,9 @@ const yourOwn = ({ req: { user } }) => {
 exports.Orders = {
     slug: 'orders',
     admin: {
+        group: 'Protocols',
         useAsTitle: 'Your Orders',
-        description: 'A summary of all your orders on DigitalHippo.',
+        description: 'A summary of all your orders on x',
     },
     access: {
         read: yourOwn,

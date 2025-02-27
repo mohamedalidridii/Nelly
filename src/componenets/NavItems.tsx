@@ -29,7 +29,7 @@ const NavItems = () => {
     useOnClickOutside(navRef, () => setActiveIndex(null))
 
 
-    return <div className="flex gap-4 h-full" ref={navRef}>
+    return <div className="flex gap-4 h-full border border-yellow-200 rounded-lg" ref={navRef}>
 
             
     </div>

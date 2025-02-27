@@ -4,6 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(require("react"));
-const Logo = () => (react_1.default.createElement("div", { className: "logocms" },
-    react_1.default.createElement("img", { src: "/nav/logo.png", alt: "TRBL Design Logo" })));
+const Logo = () => (react_1.default.createElement("div", null,
+    react_1.default.createElement("h1", null, "Rym Gamra")));
 exports.default = Logo;

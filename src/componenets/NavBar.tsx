@@ -29,7 +29,7 @@ const NavBar = async () => {
                             </Link>
                             {!user ? (<div className="flex flex-1 items-center justify-end space-x-7">
                                 <Link className={buttonVariants({
-                                    className: 'gap-1.5 bg-teal-800 hover:bg-teal-600'
+                                    className: 'px-6 py-2 border border-[#ffff] text-white z-50 rounded-lg hover:text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-700 hover:border-[#FFD700]'
                                 })} href='/sign-in'>Se connecter</Link>
                             </div>) : null}
                             <div className="ml-auto flex items-center">

@@ -14,7 +14,7 @@ const addUser = ({ req, data }) => {
     const user = req.user;
     return Object.assign(Object.assign({}, data), { user: user === null || user === void 0 ? void 0 : user.id });
 };
-const yourOwnAndPurchased = ({ req }) => __awaiter(void 0, void 0, void 0, function* () {
+const yourOwnAndPurchased = (_a) => __awaiter(void 0, [_a], void 0, function* ({ req }) {
     const user = req.user;
     if ((user === null || user === void 0 ? void 0 : user.role) === 'admin')
         return true;
@@ -67,8 +67,19 @@ const yourOwnAndPurchased = ({ req }) => __awaiter(void 0, void 0, void 0, funct
 });
 exports.ProductFiles = {
     slug: 'product_files',
+    labels: {
+        singular: {
+            en: 'PDF Protocol',
+            fr: 'PDF protocole'
+        },
+        plural: {
+            en: 'PDF protocols',
+            fr: 'PDF protocoles'
+        }
+    },
     admin: {
         hidden: ({ user }) => user.role !== 'admin',
+        group: 'Protocols',
     },
     hooks: {
         beforeChange: [addUser],
@@ -85,6 +96,7 @@ exports.ProductFiles = {
             'image/*',
             'font/*',
             'application/postscript',
+            'application/pdf'
         ],
     },
     fields: [

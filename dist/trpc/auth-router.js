@@ -18,7 +18,7 @@ const zod_1 = require("zod");
 exports.authRouter = (0, trpc_1.router)({
     createPayloadUser: trpc_1.publicProcedure
         .input(account_credentials_validator_1.AuthSignupValidator)
-        .mutation(({ input }) => __awaiter(void 0, void 0, void 0, function* () {
+        .mutation((_a) => __awaiter(void 0, [_a], void 0, function* ({ input }) {
         const { email, password, genre, nom, prenom, tel } = input;
         const payload = yield (0, get_payload_1.getPayloadClient)();
         // check if user already exists
@@ -43,9 +43,50 @@ exports.authRouter = (0, trpc_1.router)({
         });
         return { success: true, sentToEmail: email };
     })),
+    RendezVous: trpc_1.publicProcedure
+        .input(account_credentials_validator_1.RendezVousValidator)
+        .mutation((_b) => __awaiter(void 0, [_b], void 0, function* ({ input }) {
+        const { nom, prenom, date, RendezVous } = input;
+        const payload = yield (0, get_payload_1.getPayloadClient)();
+        yield payload.create({
+            collection: 'rendezVous',
+            data: {
+                nom,
+                prenom,
+                date, RendezVous
+            },
+        });
+        return { success: true };
+    })),
+    quiz: trpc_1.publicProcedure
+        .input(zod_1.z.object({
+        responses: zod_1.z.array(zod_1.z.object({
+            question: zod_1.z.string(),
+            response: zod_1.z.any(),
+        })),
+    }))
+        .mutation((_c) => __awaiter(void 0, [_c], void 0, function* ({ input }) {
+        const payload = yield (0, get_payload_1.getPayloadClient)();
+        try {
+            yield payload.create({
+                collection: "quizSubmissions",
+                data: {
+                    responses: input.responses,
+                },
+            });
+            return { success: true };
+        }
+        catch (error) {
+            console.error('Server mutation error:', error); // Log the error for debugging
+            throw new server_1.TRPCError({
+                code: "INTERNAL_SERVER_ERROR",
+                message: "An error occurred while submitting the quiz.",
+            });
+        }
+    })),
     verifyEmail: trpc_1.publicProcedure
         .input(zod_1.z.object({ token: zod_1.z.string() }))
-        .query(({ input }) => __awaiter(void 0, void 0, void 0, function* () {
+        .query((_d) => __awaiter(void 0, [_d], void 0, function* ({ input }) {
         const { token } = input;
         const payload = yield (0, get_payload_1.getPayloadClient)();
         const isVerified = yield payload.verifyEmail({
@@ -58,7 +99,7 @@ exports.authRouter = (0, trpc_1.router)({
     })),
     signIn: trpc_1.publicProcedure
         .input(account_credentials_validator_1.AuthLoginValidator)
-        .mutation(({ input, ctx }) => __awaiter(void 0, void 0, void 0, function* () {
+        .mutation((_e) => __awaiter(void 0, [_e], void 0, function* ({ input, ctx }) {
         const { email, password } = input;
         const { res } = ctx;
         const payload = yield (0, get_payload_1.getPayloadClient)();

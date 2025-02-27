@@ -30,13 +30,27 @@ const payment_router_1 = require("./payment-router");
 exports.appRouter = (0, trpc_1.router)({
     auth: auth_router_1.authRouter,
     payment: payment_router_1.paymentRouter,
+    getRendezVous: trpc_1.publicProcedure.query(() => __awaiter(void 0, void 0, void 0, function* () {
+        const payload = yield (0, get_payload_1.getPayloadClient)();
+        const RendezVous = yield payload.find({
+            collection: "rendezVous"
+        });
+        return RendezVous;
+    })),
+    getQuiz: trpc_1.publicProcedure.query(() => __awaiter(void 0, void 0, void 0, function* () {
+        const payload = yield (0, get_payload_1.getPayloadClient)();
+        const quiz = yield payload.find({
+            collection: "quiz"
+        });
+        return quiz;
+    })),
     getInfiniteProducts: trpc_1.publicProcedure
         .input(zod_1.z.object({
         limit: zod_1.z.number().min(1).max(100),
         cursor: zod_1.z.number().nullish(),
         query: query_validator_1.QueryValidator,
     }))
-        .query(({ input }) => __awaiter(void 0, void 0, void 0, function* () {
+        .query((_a) => __awaiter(void 0, [_a], void 0, function* ({ input }) {
         const { query, cursor } = input;
         const { sort, limit } = query, queryOpts = __rest(query, ["sort", "limit"]);
         const payload = yield (0, get_payload_1.getPayloadClient)();

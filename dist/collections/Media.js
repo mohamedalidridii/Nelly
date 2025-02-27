@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Media = void 0;
-const isAdminOrHasAccessToImages = () => ({ req }) => __awaiter(void 0, void 0, void 0, function* () {
+const isAdminOrHasAccessToImages = () => (_a) => __awaiter(void 0, [_a], void 0, function* ({ req }) {
     const user = req.user;
     if (!user)
         return false;
@@ -31,7 +31,7 @@ exports.Media = {
         ],
     },
     access: {
-        read: ({ req }) => __awaiter(void 0, void 0, void 0, function* () {
+        read: (_b) => __awaiter(void 0, [_b], void 0, function* ({ req }) {
             const referer = req.headers.referer;
             if (!req.user || !(referer === null || referer === void 0 ? void 0 : referer.includes('admin'))) {
                 return true;

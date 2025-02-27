@@ -36,7 +36,7 @@ if (!cached) {
         promise: null,
     };
 }
-const getPayloadClient = ({ initOptions, } = {}) => __awaiter(void 0, void 0, void 0, function* () {
+const getPayloadClient = (...args_1) => __awaiter(void 0, [...args_1], void 0, function* ({ initOptions, } = {}) {
     if (!process.env.PAYLOAD_SECRET) {
         throw new Error('Payload_SECRET is missing');
     }
@@ -46,7 +46,7 @@ const getPayloadClient = ({ initOptions, } = {}) => __awaiter(void 0, void 0, vo
     if (!cached.promise) {
         cached.promise = payload_1.default.init(Object.assign({ email: {
                 transport: transporter,
-                fromAddress: "contact@koyotechnologies.com",
+                fromAddress: "medali.dridi@koyotec.digital",
                 fromName: 'Team Verification',
             }, secret: process.env.PAYLOAD_SECRET, local: (initOptions === null || initOptions === void 0 ? void 0 : initOptions.express) ? false : true }, (initOptions || {})));
     }

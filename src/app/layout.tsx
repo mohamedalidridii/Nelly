@@ -18,8 +18,8 @@ const myFont = localFont({
   variable: "--font-Logo"
 })
 export const metadata: Metadata = {
-  title: 'Cabinet de Nutrition - Rym Gamra',
-  description: 'Cabinet de Nutrition Rym Gamra',
+  title: 'NellyGlam',
+  description: 'Clinique esthetique',
 }
 
 export default function RootLayout({
