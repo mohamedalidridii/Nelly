@@ -25,7 +25,7 @@ const NavBar = async () => {
 
                         <div className="flex h-16 items-center justify-center sm:justify-evenly">
                             <Link href='/'>
-                                <h1 className="font-Amsterdam text-black text-2xl">NellyGlam</h1>
+                            <img src="/mini.PNG" alt="LOGO" className="relative w-24"/>
                             </Link>
                             {!user ? (<div className="flex flex-1 items-center justify-end space-x-7">
                                 <Link className={buttonVariants({

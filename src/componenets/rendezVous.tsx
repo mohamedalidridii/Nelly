@@ -140,7 +140,7 @@ const RendezVous = () => {
                                                             {/* <Datepick {...register('date')} /> */}
                                                         </div>
                                                     </div>
-                                                    <Button type="submit" className="bg-teal-800">Prendre un rendez-vous</Button>
+                                                    <Button type="submit" className="px-6 py-2 font-semibold border border-[#ffff] text-white z-50 rounded-lg hover:text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-700 hover:border-[#FFD700]">Prendre un rendez-vous</Button>
                                                 </div>
                                             </div>
                                         </form>
